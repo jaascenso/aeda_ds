@@ -3,18 +3,14 @@ class Item:
         self._key = key
         self._value = value
 
-    @property
-    def key(self):
+    def get_key(self):
         return self._key
     
-    @property.setter
-    def key(self, key):
+    def set_key(self, key):
         self._key = key
 
-    @property
-    def value(self):
+    def get_value(self):
         return self._value
     
-    @property.setter
-    def value(self, value):
+    def set_value(self, value):
         self._value = value
