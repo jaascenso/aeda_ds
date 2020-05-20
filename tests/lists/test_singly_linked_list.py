@@ -16,7 +16,7 @@ class TestSinglyLinkedList(unittest.TestCase):
     def remove_elements(self, quantity):
         for i in range(quantity):
             self.list.remove_last()
-
+    
     def test_is_empty(self):
         self.assertTrue(self.list.is_empty())
         self.add_elements(1)
