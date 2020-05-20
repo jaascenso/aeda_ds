@@ -59,14 +59,14 @@ class TestDoublyLinkedList(unittest.TestCase):
         with self.assertRaises(EmptyListException):
             self.list.remove_first()
         self.add_elements(5)
-        self.list.remove_first()
+        self.assertEqual(self.list.remove_first(), "element 1")
         self.assertEqual(self.list.get_first(), "element 2")
 
     def test_remove_last(self): 
         with self.assertRaises(EmptyListException):
             self.list.remove_last()
         self.add_elements(5)
-        self.list.remove_last()
+        self.assertEqual(self.list.remove_last(), "element 5")
         self.assertEqual(self.list.get_last(), "element 4")
 
     def test_remove(self):
