@@ -1,12 +1,11 @@
-class EmptyListException(Exception):
-    pass 
+class EmptyListException(Exception): pass 
 
-class InvalidPositionException(Exception):
-    pass
+class InvalidPositionException(Exception): pass
 
-class NoSuchElementException(Exception):
-    pass
+class NoSuchElementException(Exception): pass
 
-class DuplicatedKeyException(Exception):
-    pass
-    
+class DuplicatedKeyException(Exception): pass
+
+class EmptyStackExpection(Exception): pass
+
+class FullStackException(Exception): pass
