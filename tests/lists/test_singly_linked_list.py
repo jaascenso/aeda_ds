@@ -5,6 +5,7 @@ from aed_ds.lists.singly_linked_list import SinglyLinkedList
 from aed_ds.lists.singly_linked_list_iterator import SinglyLinkedListIterator
 from aed_ds.tad_iterator import Iterator
 
+
 class TestSinglyLinkedList(unittest.TestCase):
     def setUp(self):
         self.list = SinglyLinkedList()
@@ -92,7 +93,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertEqual(self.list.get_first(), "element 2")
     
     def test_remove_first_single_element(self):
-        self.add_elements(1) # adiciona 'element 1'
+        self.add_elements(1)
         self.assertEqual(self.list.remove_first(), "element 1")
 
         with self.assertRaises(EmptyListException):

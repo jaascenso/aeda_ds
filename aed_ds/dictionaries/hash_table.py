@@ -30,8 +30,6 @@ class HashTable(Dictionary):
             if cur_item.get_key == k:
                 return cur_item.get_valeu()
         
-
-
     def insert(self, k, v): 
         if self.has_key(k):
             raise DuplicatedKeyException
@@ -103,25 +101,6 @@ class HashTable(Dictionary):
 
     def hash_function(self, k):
         return sum([ord(c) for c in k]) % self.array_size
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     def has_key(self, k):
         idx = self.hash_function(k) # O(1)    
