@@ -37,11 +37,11 @@ class HashTable(Dictionary):
             raise DuplicatedKeyException()
         idx = self.hash_function(k)
         item = Item(k,v)
-        self.table[idx].insert_last(item)
+        self.table[idx].insert_first(item)
         self.num_elements += 1 
         
     def update(self, k, v): 
-        if self.has_key(k):
+        if not self.has_key(k):
             raise NoSuchElementException()
         idx = self.hash_function(k)
         colition_list = self.table[idx]
@@ -53,7 +53,7 @@ class HashTable(Dictionary):
 
             
     def remove(self, k):
-        if self.has_key(k):
+        if not self.has_key(k):
             raise NoSuchElementException()
         idx = self.hash_function(k)
         it = self.table[idx].iterator()
@@ -66,6 +66,7 @@ class HashTable(Dictionary):
                 break
         # pos is the position to remove from the colision list
         self.table[idx].remove(pos)
+        return self.table[idx].remove(pos)
         
 
     def keys(self):
