@@ -21,27 +21,26 @@ class HashTable(Dictionary):
 
     def get(self, k):
         if self.has_key(k):
-            raise NoSuchElementException   
+            raise NoSuchElementException() 
         i = self.hash_function(k)
         colision_list = self.table[i]
         it = colision_list.iterator()
         while it.has_next():
             cur_item = it.next()
             if cur_item.get_key == k:
-                return cur_item.get_valeu()
+                return cur_item.get_value()
         
     def insert(self, k, v): 
         if self.has_key(k):
-            raise DuplicatedKeyException
+            raise DuplicatedKeyException()
         idx = self.hash_function(k)
         item = Item(k,v)
-        self.table[idx].insert.head(item)
+        self.table[idx].insert_last(item)
         self.num_elements += 1 
         
     def update(self, k, v): 
         if self.has_key(k):
-            raise NoSuchElementException
-        
+            raise NoSuchElementException()
         idx = self.hash_function(k)
         colition_list = self.table[idx]
         it = colition_list.iterator()
@@ -53,22 +52,23 @@ class HashTable(Dictionary):
             
     def remove(self, k):
         if self.has_key(k):
-            raise NoSuchElementException
-        idx = hash_function(k)
-        item = Item(k,v)
-        self.table[idx].remove.head(item)
-        self.num_elements -= 1
-
-        """ colition_list = self.table[idx]
-        it = colition_list.iterator()
+            raise NoSuchElementException()
+        idx = self.hash_function(k)
+        it = self.table[idx].iterator()
+        pos = -1
         while it.has_next():
-            current_item = it.next()
-            if current_item.get_key() = k:
-                item = Item(k,v) """
+            item = it.next()
+            pos += 1
+            if item.get_key() == k:
+                # Found it
+                break
+        # pos is the position to remove from the colision list
+        self.table[idx].remove(pos)
+        
 
     def keys(self):
         if not self.num_elements != 0 :
-            raise NoSuchElementException
+            raise NoSuchElementException()
         for idx in range (self.array_size):
              colition_list = self.table[idx]
              it = colition_list.iterator()
@@ -79,18 +79,18 @@ class HashTable(Dictionary):
         
     def values(self): 
         if not self.num_elements != 0 :
-            raise NoSuchElementException
+            raise NoSuchElementException()
         for idx in range (self.array_size):
              colition_list = self.table[idx]
              it = colition_list.iterator()
              while it.has_next():
                 current_item = it.next()
                 if current_item.get_key():
-                    return self.get_keys()
+                    print(self.get_keys())
 
     def items(self): 
         if not self.num_elements != 0:
-            raise NoSuchElementException
+            raise NoSuchElementException()
         for idx in (self.array_size):
             colition_list = self.table[idx]
             it = colition_list.iterator()

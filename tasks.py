@@ -33,3 +33,7 @@ def pr(c):
 
 ## Sempre
 # invoke sync
+
+#teste
+#python -m unittest tests/stack/test_array_stack.py
+#@unittest.SkipTest

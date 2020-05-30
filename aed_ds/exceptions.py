@@ -6,6 +6,10 @@ class NoSuchElementException(Exception): pass
 
 class DuplicatedKeyException(Exception): pass
 
-class EmptyStackExpection(Exception): pass
+class EmptyStackException(Exception): pass
 
 class FullStackException(Exception): pass
+
+class EmptyQueueException(Exception): pass
+
+class FullQueueException(Exception): pass
