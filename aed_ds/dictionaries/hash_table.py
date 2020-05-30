@@ -17,6 +17,9 @@ class HashTable(Dictionary):
         return self.num_elements
 
     def is_full(self):
+        #return self.num_items == self.array_size
+        if self.num_elements == self.array_size:
+            return True 
         return False
 
     def get(self, k):
