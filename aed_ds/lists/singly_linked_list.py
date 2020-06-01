@@ -35,7 +35,7 @@ class SinglyLinkedList(List):
         while cur_node:
             if idx == position:
                 return cur_node.get_element()
-            cur_node = cur_node.get_next()
+                
             idx += 1
 
     def find(self, element): 

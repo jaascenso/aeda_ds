@@ -45,6 +45,7 @@ class TestHashTable(unittest.TestCase):
         self.insert_items(1, shift=2)
         self.assertEqual(self.table.get("key_3"), "value_3")
 
+    
     def test_insert(self):
         self.assertFalse(self.table.has_key("key_1"))
         self.table.insert("key_1", "value_1")
@@ -60,7 +61,7 @@ class TestHashTable(unittest.TestCase):
         self.assertEqual(self.table.get("key_1"), "value_1")
         self.table.update("key_1", "new_value_1")
         self.assertEqual(self.table.get("key_1"), "new_value_1")
-
+    
     def test_remove(self):
         with self.assertRaises(NoSuchElementException):
             self.table.remove("missing_key")
@@ -70,19 +71,21 @@ class TestHashTable(unittest.TestCase):
             self.table.remove("key_1")
         self.insert_items(5)
         self.assertEqual(self.table.remove("key_3"), "value_3")
-
+    
     def test_keys(self):
         self.assertEqual(self.table.keys().size(), 0)
         self.insert_items(5)
         self.assertEqual(self.table.keys().size(), 5)
         self.assertNotEqual(self.table.keys().find("key_1"), -1)
 
+    
     def test_values(self):        
         self.assertEqual(self.table.values().size(), 0)
         self.insert_items(5)
         self.assertEqual(self.table.values().size(), 5)
         self.assertNotEqual(self.table.values().find("value_1"), -1)
-
+    
+    
     def test_items(self):
         self.assertEqual(self.table.items().size(), 0)
         self.insert_items(5)

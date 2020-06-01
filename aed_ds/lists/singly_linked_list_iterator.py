@@ -16,9 +16,8 @@ class SinglyLinkedListIterator(Iterator):
     def next(self):
         if not self.has_next():
             raise NoSuchElementException()
-        element = self.current_node.get_element()
         self.current_node = self.current_node.get_next()
-        return element
+        return self.current_node.get_element()
 
     # Restarts the iteration. After rewind, if the iteration is not empty, next will return the first element in the iteration.
     def rewind(self):

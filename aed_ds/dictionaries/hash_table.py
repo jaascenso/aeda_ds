@@ -17,21 +17,24 @@ class HashTable(Dictionary):
         return self.num_elements
 
     def is_full(self):
+        #dispersão fechada
         if self.num_elements == self.array_size:
             return True 
+        #dispersão aberta
         return False
 
     def get(self, k):
-        if self.has_key(k):
-            raise NoSuchElementException() 
+        #if self.has_key(k):
+            #raise NoSuchElementException() 
         i = self.hash_function(k)
         colision_list = self.table[i]
         it = colision_list.iterator()
         while it.has_next():
-            cur_item = it.next()
-            if cur_item.get_key == k:
-                return cur_item.get_value()
-        
+            item = it.next()
+            if item.get_key == k:
+                return item.get_value()
+        raise NoSuchElementException()
+
     def insert(self, k, v): 
         if self.has_key(k):
             raise DuplicatedKeyException()
@@ -50,7 +53,7 @@ class HashTable(Dictionary):
             current_item = it.next()
             if current_item.get_key() == k:
                 return self.current_item.set_value(v)
-
+        
             
     def remove(self, k):
         if not self.has_key(k):
@@ -66,35 +69,36 @@ class HashTable(Dictionary):
                 break
         # pos is the position to remove from the colision list
         self.table[idx].remove(pos)
-        return self.table[idx].remove(pos)
+        self.num_elements -= 1
         
 
     def keys(self):
-        if not self.num_elements != 0 :
+        if self.num_elements == 0 :
             raise NoSuchElementException()
         for idx in range (self.array_size):
-             colition_list = self.table[idx]
-             it = colition_list.iterator()
-             while it.has_next():
+            colition_list = self.table[idx]
+            it = colition_list.iterator()
+            while it.has_next():
                 current_item = it.next()
                 if current_item.get_key():
                     return self.current_item.get_keys()
         
     def values(self): 
-        if not self.num_elements != 0 :
+        if self.num_elements == 0 :
             raise NoSuchElementException()
         for idx in range (self.array_size):
-             colition_list = self.table[idx]
-             it = colition_list.iterator()
-             while it.has_next():
-                current_item = it.next()
-                if current_item.get_key():
-                    print(self.get_keys())
-
+            colition_list = self.table[idx]
+            it = colition_list.iterator()
+            while it.has_next():
+                item = Item(k,v)
+                item = it.next()
+                if item.get_key():
+                    return self.item.get_value()
+        
     def items(self): 
-        if not self.num_elements != 0:
+        if self.num_elements == 0:
             raise NoSuchElementException()
-        for idx in (self.array_size):
+        for idx in range(self.array_size):
             colition_list = self.table[idx]
             it = colition_list.iterator()
             while it.has_next:

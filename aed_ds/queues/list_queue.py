@@ -1,6 +1,6 @@
 from .tad_queue import Queue
 from ..lists.singly_linked_list import SinglyLinkedList
-from ..exceptions import EmptyQueueExpection , FullQueueException
+from ..exceptions import EmptyQueueException , FullQueueException
 
 class ListQueue(Queue):
     def __init__(self, size = 40):
@@ -8,21 +8,21 @@ class ListQueue(Queue):
         self.list = SinglyLinkedList
 
     def is_empty(self): 
-        return self.is_empty()
+        return self.list.is_empty()
 
     def is_full(self):   
-        return self.num_elements == self.size
+        return self.size == self.list_size
 
     def size(self): 
-        return self.num_elements
+        return self.list.size()
 
     def enqueue(self, element):
-        if self.num_elements == self.size:
+        if self.is_full():
             raise FullQueueException()
-        self.insert_last(element)
+        self.list.insert_last(element)
 
     def dequeue(self): 
-        if self.num_elements == 0:
-            raise EmptyQueueExpection()
-        element = self.remove_tail
-        return element.get_element()
+        if self.is_empty():
+            raise EmptyQueueException()
+        pos = self.list.remove.first().get_element()
+        return pos

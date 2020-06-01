@@ -14,7 +14,6 @@ class ListStack(Stack):
     def is_full(self):
         return self.size() == self.list_size
     
-    
     def size(self):
         return self.list.size()
 
