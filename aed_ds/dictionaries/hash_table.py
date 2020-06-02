@@ -8,6 +8,7 @@ class HashTable(Dictionary):
         self.num_elements = 0
         self.array_size = size
         self.table = (self.array_size * ctypes.py_object)()
+        self.main_list = SinglyLinkedList()
 
         for i in range(self.array_size):
             self.table[i] = SinglyLinkedList()
@@ -16,7 +17,8 @@ class HashTable(Dictionary):
         return self.num_elements
 
     def is_full(self): 
-        return False
+        return self.num_elements == self.array_size
+        
 
     def get(self, k):
         idx = self.hash_fuction(k)
@@ -55,49 +57,48 @@ class HashTable(Dictionary):
     def remove(self, k): 
         idx = self.hash_fuction(k)
         colision_list = self.table[idx]
-        it =colision_list.iterator()
+        it = colision_list.iterator()
+        #it = self.table[i]
         count = 0
         while it.has_next():
             current_item = it.next()
             if current_item.get_key() == k:
                 temp_value = current_item.get_value()
                 colision_list.remove(count)
+                self.num_elements -= 1
                 return temp_value
-            cout += 1
+            count += 1
+            
         raise NoSuchElementException
 
-    def keys(self):
-        key_list = SinglyLinkedList()
+    def keys(self): 
         for i in range(self.size()):
             colision_list = self.table[i]
             it = colision_list.iterator()
             while it.has_next():
                 current_item = it.next()
-                key_list.insert_last(current_item.get_key())
-        return key_list
+                self.main_list.insert_last(current_item.get_key())
+        return self.main_list
 
 
     def values(self):
-        value_list = SinglyLinkedList()
         for i in range(self.size()):
             colision_list = self.table[i]
             it = colision_list.iterator()
             while it.has_next():
                 current_item = it.next()
-                value_list.insert_last(current_item.get_value())
-        return value_list
+                self.main_list.insert_last(current_item.get_value())
+        return self.main_list
 
     def items(self): 
-        main_list = SinglyLinkedList()
         for i in range(self.size()):
             colision_list = self.table[i]
             it = colision_list.iterator()
             while it.has_next():
                 current_item = it.next()
-                main_list.insert_last(current_item)
-        return main_list
+                self.main_list.insert_last(current_item)
+        return self.main_list
                 
-
 
     def hash_fuction(self, key):
         return sum([ord(c) for c in key]) % self.array_size
