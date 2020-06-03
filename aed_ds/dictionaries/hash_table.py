@@ -44,7 +44,7 @@ class HashTable(Dictionary):
     def update(self, k, v): 
         if not self.has_key(k):
             raise NoSuchElementException()
-        else:
+        else:   
             idx = self.hash_fuction(k)
             colision_list = self.table[idx]
             it = colision_list.iterator()
