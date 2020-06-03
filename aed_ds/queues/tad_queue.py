@@ -1,7 +1,13 @@
 from abc import ABC, abstractmethod
+
+
 class Queue(ABC):
     # Returns true iff the queue contains no elements.
+<<<<<<< HEAD
     @abstractmethod 
+=======
+    @abstractmethod
+>>>>>>> upstream/develop
     def is_empty(self): pass
 
     # Returns true iff the queue cannot contain more elements.

@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+
 class Stack(ABC):
     # Returns true iff the stack contains no elements.
     @abstractmethod
