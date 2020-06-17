@@ -37,16 +37,7 @@ def clean(c):
 def build(c):
     c.run("python setup.py bdist_wheel")
 
-<<<<<<< HEAD
-## Sempre
-# invoke sync
-
-#teste
-#python -m unittest tests/stack/test_array_stack.py
-#@unittest.SkipTest
-=======
 @task(build)
 def install(c):
     c.run("pip uninstall -y aed-ds")
     c.run("pip install --find-links=%cd%\dist aed_ds")
->>>>>>> upstream/develop
