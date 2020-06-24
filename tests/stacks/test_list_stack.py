@@ -10,3 +10,6 @@ class TestListStack(TestStack, unittest.TestCase):
     
     def setUp(self):
         self.build_stack()
+        
+if __name__ == "__main__":
+    unittest.main()

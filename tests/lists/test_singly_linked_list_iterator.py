@@ -49,3 +49,6 @@ class TestSinglyLinkedListIterator(unittest.TestCase):
         self.assertEqual(it.next(), "element 2")
         it.rewind()
         self.assertEqual(it.next(), "element 1")
+
+if __name__ == "__main__":
+    unittest.main()

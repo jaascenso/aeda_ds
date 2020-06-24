@@ -9,3 +9,6 @@ class TestListQueue(unittest.TestCase, TestQueue):
 
     def setUp(self):
         self.build_queue()
+        
+if __name__ == "__main__":
+    unittest.main()

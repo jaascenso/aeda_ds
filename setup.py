@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup (
+setup (
     name = "aed-ds",
     version = "0.0.1",
     author = "AED",
@@ -12,7 +12,7 @@ setuptools.setup (
     long_description = long_description,
     long_description_content_type = "text/markdown",
     url = "https://github.com/amgs/aed_ds",
-    packages = setuptools.find_packages(),
+    packages = find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     classifiers = [
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",

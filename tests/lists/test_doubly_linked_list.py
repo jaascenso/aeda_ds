@@ -199,3 +199,6 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertIsInstance(self.list.iterator(), Iterator) # Already tested with TwoWayIterator
         self.assertIsInstance(self.list.iterator(), TwoWayIterator)
         self.assertIsInstance(self.list.iterator(), DoublyLinkedListIterator)
+
+if __name__ == "__main__":
+    unittest.main()

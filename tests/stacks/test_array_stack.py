@@ -10,3 +10,6 @@ class TestArrayStack(TestStack, unittest.TestCase):
     
     def setUp(self):
         self.set_limit(10)
+        
+if __name__ == "__main__":
+    unittest.main()

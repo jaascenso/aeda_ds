@@ -10,3 +10,6 @@ class TestArrayQueue(unittest.TestCase, TestQueue):
     def setUp(self):
         self.limit = 10
         self.build_queue()
+        
+if __name__ == "__main__":
+    unittest.main()

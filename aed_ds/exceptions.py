@@ -1,15 +1,36 @@
-class EmptyListException(Exception): pass 
+class EmptyListException(Exception):
+    pass
+
 
 class InvalidPositionException(Exception): pass
 
-class NoSuchElementException(Exception): pass
 
-class DuplicatedKeyException(Exception): pass
+class NoSuchElementException(Exception):
+    pass
 
-class EmptyStackException(Exception): pass
 
-class FullStackException(Exception): pass
+class EmptyStackException(Exception):
+    pass
 
-class EmptyQueueException(Exception): pass
 
-class FullQueueException(Exception): pass
+class FullStackException(Exception):
+    pass
+
+
+class EmptyQueueException(Exception):
+    pass
+
+
+class FullQueueException(Exception):
+    pass
+
+
+class DuplicatedKeyException(Exception):
+    pass
+
+
+class EmptyDictionaryException(Exception):
+    pass
+
+class EmptyTreeException(Exception):
+    pass
